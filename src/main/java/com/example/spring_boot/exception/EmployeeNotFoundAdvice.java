@@ -1,4 +1,4 @@
-package com.example.spring_boot;
+package com.example.spring_boot.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,7 +1,10 @@
-package com.example.spring_boot;
+package com.example.spring_boot.controller;
 
 import java.util.List;
 
+import com.example.spring_boot.data.Employee;
+import com.example.spring_boot.EmployeeNotFoundException;
+import com.example.spring_boot.data.EmployeeRepository;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

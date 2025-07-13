@@ -1,4 +1,4 @@
-package com.example.spring_boot;
+package com.example.spring_boot.data;
 
 import java.util.Objects;
 
