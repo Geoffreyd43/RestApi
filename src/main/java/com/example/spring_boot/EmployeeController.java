@@ -29,8 +29,8 @@ class EmployeeController {
     // end::get-aggregate-root[]
 
     @PostMapping("/employees")
-    Employee newEmployee(@RequestBody Employee newEmployee) {
-        return repository.save(newEmployee);
+    List<Employee> newEmployee(@RequestBody List<Employee> newEmployees) {
+        return repository.saveAll(newEmployees);
     }
 
     // Single item
@@ -47,8 +47,12 @@ class EmployeeController {
 
         return repository.findById(id)
                 .map(employee -> {
-                    employee.setName(newEmployee.getName());
-                    employee.setRole(newEmployee.getRole());
+                    if (newEmployee.getName() != null) {
+                        employee.setName(newEmployee.getName());
+                    }
+                    if (newEmployee.getRole() != null) {
+                        employee.setRole(newEmployee.getRole());
+                    }
                     return repository.save(employee);
                 })
                 .orElseGet(() -> {
